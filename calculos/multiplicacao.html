@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✿ | Multiplicação de Matrizes</title>
+    <link rel="icon" href="../imagens/icone.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/matrizes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container-3">
+        <h1>Multiplicação de Matrizes</h1>
+    
+        <div class="matrizes-container">
+            <div id="matrizA">
+                <h2>Matriz A</h2>
+                <div class="linhas"></div>
+            </div>
+        
+            <div id="matrizB">
+                <h2>Matriz B</h2>
+                <div class="linhas"></div>
+            </div>
+        </div>
+        
+        <button onclick="multiplicarMatrizes()">Multiplicar Matrizes</button>
+
+        <br>
+        <div id="resultado"><h2>Resultado:</h2></div>
+        <button id="reloadButton" onclick="location.reload()">Calcular outras matrizes</button>
+    </div>
+
+    <script>
+        // Pergunta ao usuário sobre o tamanho das matrizes ao carregar a página
+        window.onload = function() {
+            const linhas1 = parseInt(prompt("Digite o número de linhas da 1 matriz:"));
+            const colunas1 = parseInt(prompt("Digite o número de colunas da 1 matriz:"));
+            const linhas2 = parseInt(prompt("Digite o número de linhas da 2 matriz:"));
+            const colunas2 = parseInt(prompt("Digite o número de colunas da 2 matriz:"));
+            if(colunas1!==linhas2){
+                alert("Número de colunas da Matriz A deve ser igual ao número de linhas da Matriz B.");
+                return location.reload();
+            }
+            else{
+                criarMatriz('matrizA', linhas1, colunas1);
+                criarMatriz('matrizB', linhas2, colunas2);
+            }
+        }
+    </script>
+    <script src="../js/operacoes.js"></script>
+
+</body>
+</html>

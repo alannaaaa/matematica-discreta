@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✿ | Permutação com repetição</title>
+    <link rel="icon" href="../imagens/icone.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/calculos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container-3">
+        <h1>Calculadora de Permutação com repetição</h1>
+        <img src="../imagens/permutacao.png"><br>
+    
+          <label for="totalElementos">Total de elementos (n): </label>
+          <input type="number" id="totalElementos" placeholder="n:" required><br>
+          
+          <label for="repeticoes">Informe as repetições dos elementos (separadas por vírgula): </label>
+          <input type="text" id="repeticoes" placeholder="ex: 3,2,1" required><br>
+          
+          <button onclick="permutacao()">Calcular</button>
+
+          <p id="resultado" style="display: none;"><div class="c-loader" style="display: none;"></div></p>
+
+          
+    </div>
+    <script src="../js/operacoes.js"></script>
+    <script>
+        // Função que pega parâmetros da URL
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+    
+        // Preenche os inputs com os valores passados pela URL
+        window.onload = function() {
+            const n = getParameterByName('n');
+            const repeticoes = getParameterByName('repeticoes');
+    
+            if (n && repeticoes) {
+                document.getElementById('totalElementos').value = n;
+                document.getElementById('repeticoes').value = repeticoes;
+            }
+        };
+    </script>  
+</body>
+</html>

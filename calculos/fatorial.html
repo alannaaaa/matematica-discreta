@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✿ | Fatorial ou Permutação</title>
+    <link rel="icon" href="../imagens/icone.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Cálculo de Fatorial ou Permutação</h1>
+        <div class="input-group">
+            <label class="input">
+                <input class="input__field" type="number" id="numberInput" placeholder=" " min="0">
+                <span class="input__label">Digite um número</span>
+            </label>
+            <button id="calculateButton"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+    <div class="container-2">
+        <div id="result"></div>
+    </div>  
+    <div class="container-3">
+        <button id="reloadButton" style="display: none; align-self: center;" onclick="location.reload()">Calcular outro fatorial</button>
+    </div>
+    <script src="../js/operacoes.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+        // Função que pega parâmetros da URL
+        function getParameterByName(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+    
+        // Preenche os inputs com os valores passados pela URL
+        window.onload = function() {
+            const n = getParameterByName('n');
+    
+            if (n) {
+                document.getElementById('numberInput').value = n;
+            }
+        };
+    </script> 
+</body>
+</html>

@@ -1,0 +1,225 @@
+body {
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    max-width: 355px;
+    margin: 0 auto;
+}
+
+.container-2 {
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+.container-3 {
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; /* Coloca os itens em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between; /* Espaço entre o input e o botão */
+    align-items: center; /* Alinha verticalmente os itens */
+    margin-bottom: 20px; /* Espaçamento inferior */
+}
+
+.input {
+    position: relative;
+    flex: 1; /* O input ocupará o espaço restante */
+    margin-right: 10px; /* Espaço entre o input e o botão */
+}
+
+.input__label {
+    position: absolute;
+    top: 15px;
+    padding: 0 3px;
+    background: none;
+    transition: transform 120ms ease-in;
+    font-weight: bold;
+    color: #aaa;
+    font-size: 0.9em;
+    left: 10px;
+}
+
+.input__field {
+    box-sizing: border-box;
+    display: block;
+    width: 300px; /* Largura fixa do input */
+    border: 2px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    color: #212121;
+    background: transparent;
+    transition: border-color 0.3s;
+}
+
+.input__field:focus {
+    border-color: purple;
+}
+
+button {
+    padding: 17px;
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    border: none;
+    border-radius: 5px;
+    background-color: purple;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    min-width: 10px; /* Largura mínima do botão */
+}
+
+button:hover {
+    background-color: darkviolet;
+    i{
+        animation-duration: 1s;
+        animation-name: slidein;
+        animation-iteration-count: infinite;
+    }
+}
+
+a {
+    padding: 17px;
+    border: none;
+    border-radius: 5px;
+    background-color: darkviolet;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    min-width: 10px; /* Largura mínima do botão */
+    text-decoration: none;
+}
+
+a:hover {
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+}
+
+.input__field:focus + .input__label,
+.input__field:not(:placeholder-shown) + .input__label {
+    transform: translateY(-20px) scale(0.8);
+    color: purple;
+    background-color: #f0f0f0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    outline: none;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-height: 80vh;
+}
+
+.square {
+    background-color: purple;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 5px 5px;
+    box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.3);
+    animation: jump 0.5s ease-out;
+}
+
+.square2 {
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 5px;
+    box-shadow: 0px 10px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1s ease-in;
+}
+
+.times {
+    margin: 0 10px;
+    font-size: 24px;
+    color: purple;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    80% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slidein {
+    0% {
+        transform: translateX(-10px);
+    }
+  
+    100% {
+        transform: translateX(10px);
+    }
+  }
+
+.operacoes {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.botao {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    padding: 10px 20px;
+    margin: 5px; /* Espaçamento entre os botões */
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none; /* Remove o sublinhado do link */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    flex: 1 1 150px; /* Cresce, encolhe e define um tamanho base */
+    max-width: 100px; /* Largura máxima dos botões */
+}
+
+.botao:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✿ | Subtração de Matrizes</title>
+    <link rel="icon" href="../imagens/icone.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/matrizes.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container-3">
+        <h1>Subtração de Matrizes</h1>
+    
+        <div class="matrizes-container">
+            <div id="matrizA">
+                <h2>Matriz A</h2>
+                <div class="linhas"></div>
+            </div>
+        
+            <div id="matrizB">
+                <h2>Matriz B</h2>
+                <div class="linhas"></div>
+            </div>
+        </div>
+        
+        <button onclick="subtrairMatrizes()">Subtrair Matrizes</button>
+
+        <br>
+        <div id="resultado"><h2>Resultado:</h2></div>
+        <button id="reloadButton" onclick="location.reload()">Calcular outras matrizes</button>
+    </div>
+
+    <script>
+        // Pergunta ao usuário sobre o tamanho das matrizes ao carregar a página
+        window.onload = function() {
+            const linhas = parseInt(prompt("Digite o número de linhas das matrizes:"));
+            const colunas = parseInt(prompt("Digite o número de colunas das matrizes:"));
+            if(linhas!==colunas){
+                alert("O número de linhas deve ser igual ao número de colunas.");
+                return location.reload();
+            }
+            else{
+                criarMatriz('matrizA', linhas, colunas);
+                criarMatriz('matrizB', linhas, colunas);
+            }
+        }
+    </script>
+    <script src="../js/operacoes.js"></script>
+
+</body>
+</html>
